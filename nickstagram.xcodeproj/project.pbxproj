@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3CDE6A21A6CEB46ADE441D4 /* Pods_nickstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352F5ED240FB1FFF41DB9D96 /* Pods_nickstagram.framework */; };
 		D532CA6D1E5D234E008B4176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6C1E5D234E008B4176 /* AppDelegate.swift */; };
 		D532CA6F1E5D234E008B4176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6E1E5D234E008B4176 /* ViewController.swift */; };
 		D532CA721E5D234E008B4176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D532CA701E5D234E008B4176 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		352F5ED240FB1FFF41DB9D96 /* Pods_nickstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nickstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.release.xcconfig"; sourceTree = "<group>"; };
+		925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		D532CA691E5D234D008B4176 /* nickstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nickstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D532CA6C1E5D234E008B4176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D532CA6E1E5D234E008B4176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CDE6A21A6CEB46ADE441D4 /* Pods_nickstagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EC0BB6F421CE21E6FC36CC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				352F5ED240FB1FFF41DB9D96 /* Pods_nickstagram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		564972F4F8FD82C10730E1ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */,
+				7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D532CA601E5D234D008B4176 = {
 			isa = PBXGroup;
 			children = (
 				D532CA6B1E5D234D008B4176 /* nickstagram */,
 				D532CA6A1E5D234D008B4176 /* Products */,
+				564972F4F8FD82C10730E1ED /* Pods */,
+				1EC0BB6F421CE21E6FC36CC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				D532CA6C1E5D234E008B4176 /* AppDelegate.swift */,
+				D5612BB21E5D2574006720C0 /* UI */,
 				D532CA811E5D23BC008B4176 /* API */,
 				D532CA801E5D23B5008B4176 /* Models */,
-				D532CA7F1E5D23B1008B4176 /* Views */,
-				D532CA7E1E5D23AB008B4176 /* View Controllers */,
-				D532CA701E5D234E008B4176 /* Main.storyboard */,
 				D532CA731E5D234E008B4176 /* Assets.xcassets */,
-				D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */,
 				D532CA781E5D234E008B4176 /* Info.plist */,
 			);
 			path = nickstagram;
@@ -96,6 +117,25 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		D5612BB21E5D2574006720C0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D5612BB31E5D258B006720C0 /* Storyboards */,
+				D532CA7F1E5D23B1008B4176 /* Views */,
+				D532CA7E1E5D23AB008B4176 /* View Controllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D5612BB31E5D258B006720C0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D532CA701E5D234E008B4176 /* Main.storyboard */,
+				D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D532CA7B1E5D234E008B4176 /* Build configuration list for PBXNativeTarget "nickstagram" */;
 			buildPhases = (
+				BC58B69F3A9169BE3F7F7FA3 /* [CP] Check Pods Manifest.lock */,
 				D532CA651E5D234D008B4176 /* Sources */,
 				D532CA661E5D234D008B4176 /* Frameworks */,
 				D532CA671E5D234D008B4176 /* Resources */,
+				3C02F10F21BD066703C329E7 /* [CP] Embed Pods Frameworks */,
+				164C0CED8EEA957867655C2B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +206,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		164C0CED8EEA957867655C2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C02F10F21BD066703C329E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC58B69F3A9169BE3F7F7FA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D532CA651E5D234D008B4176 /* Sources */ = {
@@ -289,6 +380,7 @@
 		};
 		D532CA7C1E5D234E008B4176 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
@@ -302,6 +394,7 @@
 		};
 		D532CA7D1E5D234E008B4176 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
@@ -332,6 +425,7 @@
 				D532CA7D1E5D234E008B4176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
