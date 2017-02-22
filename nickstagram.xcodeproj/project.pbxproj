@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D532CA6D1E5D234E008B4176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6C1E5D234E008B4176 /* AppDelegate.swift */; };
+		D532CA6F1E5D234E008B4176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6E1E5D234E008B4176 /* ViewController.swift */; };
+		D532CA721E5D234E008B4176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D532CA701E5D234E008B4176 /* Main.storyboard */; };
+		D532CA741E5D234E008B4176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D532CA731E5D234E008B4176 /* Assets.xcassets */; };
+		D532CA771E5D234E008B4176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D532CA691E5D234D008B4176 /* nickstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nickstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D532CA6C1E5D234E008B4176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D532CA6E1E5D234E008B4176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D532CA711E5D234E008B4176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D532CA731E5D234E008B4176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D532CA761E5D234E008B4176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D532CA781E5D234E008B4176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D532CA661E5D234D008B4176 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D532CA601E5D234D008B4176 = {
+			isa = PBXGroup;
+			children = (
+				D532CA6B1E5D234D008B4176 /* nickstagram */,
+				D532CA6A1E5D234D008B4176 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D532CA6A1E5D234D008B4176 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D532CA691E5D234D008B4176 /* nickstagram.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D532CA6B1E5D234D008B4176 /* nickstagram */ = {
+			isa = PBXGroup;
+			children = (
+				D532CA6C1E5D234E008B4176 /* AppDelegate.swift */,
+				D532CA6E1E5D234E008B4176 /* ViewController.swift */,
+				D532CA701E5D234E008B4176 /* Main.storyboard */,
+				D532CA731E5D234E008B4176 /* Assets.xcassets */,
+				D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */,
+				D532CA781E5D234E008B4176 /* Info.plist */,
+			);
+			path = nickstagram;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D532CA681E5D234D008B4176 /* nickstagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D532CA7B1E5D234E008B4176 /* Build configuration list for PBXNativeTarget "nickstagram" */;
+			buildPhases = (
+				D532CA651E5D234D008B4176 /* Sources */,
+				D532CA661E5D234D008B4176 /* Frameworks */,
+				D532CA671E5D234D008B4176 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nickstagram;
+			productName = nickstagram;
+			productReference = D532CA691E5D234D008B4176 /* nickstagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D532CA611E5D234D008B4176 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Nick McDonald";
+				TargetAttributes = {
+					D532CA681E5D234D008B4176 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3QT27T2PJ3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D532CA641E5D234D008B4176 /* Build configuration list for PBXProject "nickstagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D532CA601E5D234D008B4176;
+			productRefGroup = D532CA6A1E5D234D008B4176 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D532CA681E5D234D008B4176 /* nickstagram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D532CA671E5D234D008B4176 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D532CA771E5D234E008B4176 /* LaunchScreen.storyboard in Resources */,
+				D532CA741E5D234E008B4176 /* Assets.xcassets in Resources */,
+				D532CA721E5D234E008B4176 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D532CA651E5D234D008B4176 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D532CA6F1E5D234E008B4176 /* ViewController.swift in Sources */,
+				D532CA6D1E5D234E008B4176 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D532CA701E5D234E008B4176 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D532CA711E5D234E008B4176 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D532CA761E5D234E008B4176 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D532CA791E5D234E008B4176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D532CA7A1E5D234E008B4176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D532CA7C1E5D234E008B4176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3QT27T2PJ3;
+				INFOPLIST_FILE = nickstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickdonald.nickstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D532CA7D1E5D234E008B4176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3QT27T2PJ3;
+				INFOPLIST_FILE = nickstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickdonald.nickstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D532CA641E5D234D008B4176 /* Build configuration list for PBXProject "nickstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D532CA791E5D234E008B4176 /* Debug */,
+				D532CA7A1E5D234E008B4176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D532CA7B1E5D234E008B4176 /* Build configuration list for PBXNativeTarget "nickstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D532CA7C1E5D234E008B4176 /* Debug */,
+				D532CA7D1E5D234E008B4176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D532CA611E5D234D008B4176 /* Project object */;
+}
