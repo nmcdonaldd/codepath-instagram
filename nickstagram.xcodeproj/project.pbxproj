@@ -55,13 +55,45 @@
 			isa = PBXGroup;
 			children = (
 				D532CA6C1E5D234E008B4176 /* AppDelegate.swift */,
-				D532CA6E1E5D234E008B4176 /* ViewController.swift */,
+				D532CA811E5D23BC008B4176 /* API */,
+				D532CA801E5D23B5008B4176 /* Models */,
+				D532CA7F1E5D23B1008B4176 /* Views */,
+				D532CA7E1E5D23AB008B4176 /* View Controllers */,
 				D532CA701E5D234E008B4176 /* Main.storyboard */,
 				D532CA731E5D234E008B4176 /* Assets.xcassets */,
 				D532CA751E5D234E008B4176 /* LaunchScreen.storyboard */,
 				D532CA781E5D234E008B4176 /* Info.plist */,
 			);
 			path = nickstagram;
+			sourceTree = "<group>";
+		};
+		D532CA7E1E5D23AB008B4176 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D532CA6E1E5D234E008B4176 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D532CA7F1E5D23B1008B4176 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D532CA801E5D23B5008B4176 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D532CA811E5D23BC008B4176 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
