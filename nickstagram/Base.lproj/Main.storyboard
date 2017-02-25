@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ngm Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ngmLoginViewController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,156 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saber-4k" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-bT-okR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mC-7a-TX2">
+                                <rect key="frame" x="94" y="28" width="187.5" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickstagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hev-19-XDe">
+                                        <rect key="frame" x="56" y="15" width="123.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera1" translatesAutoresizingMaskIntoConstraints="NO" id="fWS-uj-i3K">
+                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="wFt-bp-6vt"/>
+                                            <constraint firstAttribute="height" constant="40" id="y2g-Ye-m8r"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Hev-19-XDe" secondAttribute="trailing" constant="8" id="TOP-No-rzN"/>
+                                    <constraint firstItem="fWS-uj-i3K" firstAttribute="top" secondItem="9mC-7a-TX2" secondAttribute="top" constant="8" id="Wek-xq-X84"/>
+                                    <constraint firstItem="Hev-19-XDe" firstAttribute="centerY" secondItem="fWS-uj-i3K" secondAttribute="centerY" id="dkS-Fb-q41"/>
+                                    <constraint firstItem="fWS-uj-i3K" firstAttribute="leading" secondItem="9mC-7a-TX2" secondAttribute="leading" constant="8" id="onk-oz-COn"/>
+                                    <constraint firstAttribute="bottom" secondItem="fWS-uj-i3K" secondAttribute="bottom" constant="8" id="qT9-nV-1b3"/>
+                                    <constraint firstItem="Hev-19-XDe" firstAttribute="leading" secondItem="fWS-uj-i3K" secondAttribute="trailing" constant="8" id="u97-hV-0WZ"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="laI-nk-Jt3" customClass="ngmLoginTextField" customModule="nickstagram" customModuleProvider="target">
+                                <rect key="frame" x="32" y="148" width="311" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="0.11100706335616438" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="kTy-Z3-cBc"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-XU-wvd" customClass="ngmLoginTextField" customModule="nickstagram" customModuleProvider="target">
+                                <rect key="frame" x="32" y="227" width="311" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="0.10999036815068493" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="dnJ-sx-09C"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-PZ-Fwv">
+                                <rect key="frame" x="32" y="310" width="311" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1p-c5-yZu" customClass="ngmLoginButton" customModule="nickstagram" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="100" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="0.1037296660958904" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Wdz-pl-1EH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02U-YB-CVb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9y-vP-bfG" customClass="ngmLoginButton" customModule="nickstagram" customModuleProvider="target">
+                                        <rect key="frame" x="203" y="8" width="100" height="35"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10509417808219178" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Qnb-c7-BBD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKb-zG-AQb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="g1p-c5-yZu" firstAttribute="top" secondItem="yBN-PZ-Fwv" secondAttribute="top" constant="8" id="9ho-hR-TaL"/>
+                                    <constraint firstAttribute="trailing" secondItem="A9y-vP-bfG" secondAttribute="trailing" constant="8" id="AsQ-Ng-Kf8"/>
+                                    <constraint firstAttribute="bottom" secondItem="g1p-c5-yZu" secondAttribute="bottom" constant="8" id="CcB-Fz-jc8"/>
+                                    <constraint firstItem="g1p-c5-yZu" firstAttribute="centerY" secondItem="yBN-PZ-Fwv" secondAttribute="centerY" id="aS5-E7-npW"/>
+                                    <constraint firstItem="g1p-c5-yZu" firstAttribute="leading" secondItem="yBN-PZ-Fwv" secondAttribute="leading" constant="8" id="cLj-gl-kZu"/>
+                                    <constraint firstItem="A9y-vP-bfG" firstAttribute="top" secondItem="yBN-PZ-Fwv" secondAttribute="top" constant="8" id="dGN-c7-ESE"/>
+                                    <constraint firstItem="A9y-vP-bfG" firstAttribute="centerY" secondItem="yBN-PZ-Fwv" secondAttribute="centerY" id="mF7-KG-Vwe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2t-nC-iJj">
+                                <rect key="frame" x="32" y="120" width="80" height="20"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-jy-Tf4">
+                                <rect key="frame" x="32" y="199" width="73" height="20"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EOt-XU-wvd" firstAttribute="top" secondItem="lNA-jy-Tf4" secondAttribute="bottom" constant="8" id="4ND-S4-bhq"/>
+                            <constraint firstItem="9mC-7a-TX2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeD-Ke-Eub"/>
+                            <constraint firstItem="EOt-XU-wvd" firstAttribute="leading" secondItem="lNA-jy-Tf4" secondAttribute="leading" id="Kqo-d4-3iw"/>
+                            <constraint firstAttribute="trailing" secondItem="laI-nk-Jt3" secondAttribute="trailing" constant="32" id="Lug-hf-IPA"/>
+                            <constraint firstItem="Hev-19-XDe" firstAttribute="leading" secondItem="fWS-uj-i3K" secondAttribute="trailing" constant="8" id="T2i-cb-4AH"/>
+                            <constraint firstItem="yBN-PZ-Fwv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="WAA-Dq-rOz"/>
+                            <constraint firstItem="Hev-19-XDe" firstAttribute="centerY" secondItem="fWS-uj-i3K" secondAttribute="centerY" id="aLo-fs-5Fz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bi7-bT-okR" secondAttribute="bottom" id="bBT-qO-FdM"/>
+                            <constraint firstAttribute="trailing" secondItem="yBN-PZ-Fwv" secondAttribute="trailing" constant="32" id="bEu-Nk-eHV"/>
+                            <constraint firstItem="EOt-XU-wvd" firstAttribute="leading" secondItem="laI-nk-Jt3" secondAttribute="leading" id="dB5-tb-rVs"/>
+                            <constraint firstItem="laI-nk-Jt3" firstAttribute="leading" secondItem="r2t-nC-iJj" secondAttribute="leading" id="gBd-X8-dde"/>
+                            <constraint firstItem="EOt-XU-wvd" firstAttribute="trailing" secondItem="laI-nk-Jt3" secondAttribute="trailing" id="hfQ-hH-pYl"/>
+                            <constraint firstAttribute="trailing" secondItem="Bi7-bT-okR" secondAttribute="trailing" id="mw4-eL-9ZK"/>
+                            <constraint firstAttribute="trailing" secondItem="Hev-19-XDe" secondAttribute="trailing" constant="101.5" id="n1F-tv-tPy"/>
+                            <constraint firstItem="Bi7-bT-okR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nHS-fw-jIK"/>
+                            <constraint firstItem="r2t-nC-iJj" firstAttribute="top" secondItem="9mC-7a-TX2" secondAttribute="bottom" constant="36" id="o0K-Ui-7QE"/>
+                            <constraint firstItem="lNA-jy-Tf4" firstAttribute="top" secondItem="laI-nk-Jt3" secondAttribute="bottom" constant="16" id="szj-1E-iXL"/>
+                            <constraint firstItem="laI-nk-Jt3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="vLl-9x-lHZ"/>
+                            <constraint firstItem="yBN-PZ-Fwv" firstAttribute="top" secondItem="EOt-XU-wvd" secondAttribute="bottom" constant="48" id="x8J-Dh-oyU"/>
+                            <constraint firstItem="laI-nk-Jt3" firstAttribute="top" secondItem="r2t-nC-iJj" secondAttribute="bottom" constant="8" id="xXa-p3-Lgk"/>
+                            <constraint firstItem="Bi7-bT-okR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zjR-3J-1f5"/>
+                            <constraint firstItem="9mC-7a-TX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="zpQ-bb-DSw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Bi7-bT-okR" id="Avg-ao-zH1"/>
+                        <outlet property="loginButton" destination="A9y-vP-bfG" id="Qhx-ee-e4l"/>
+                        <outlet property="passwordTextField" destination="EOt-XU-wvd" id="g43-4I-02I"/>
+                        <outlet property="signUpButton" destination="g1p-c5-yZu" id="yMP-72-h88"/>
+                        <outlet property="usernameTextField" destination="laI-nk-Jt3" id="CKK-f0-l7P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera1" width="350" height="350"/>
+        <image name="saber-4k" width="1920" height="1080"/>
+    </resources>
 </document>
