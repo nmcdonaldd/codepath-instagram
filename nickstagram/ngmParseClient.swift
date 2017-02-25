@@ -24,10 +24,9 @@ class ngmParseClient: NSObject {
     
     func signUpParseUser(_ user: ngmUser, success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
         guard let parseUser: PFUser = user.parseUser else {
-            failure(ParseUserError.userSignUpLoginError("Error, no PFUser"))
+            failure(ParseUserError.userSignUpLoginError("Error, no PFUser in ngmUser"))
             return
         }
-        
         parseUser.signUpInBackground { (didComplete: Bool, error: Error?) in
             if (didComplete) {
                 success()
@@ -38,13 +37,12 @@ class ngmParseClient: NSObject {
     }
     
     func loginParseUser(_ user: ngmUser, success: @escaping ngmUserResultSuccessBlock, failure: @escaping ngmUserResultFailureBlock) {
-        PFUser.logInWithUsername(inBackground: user.username, password: "Something") { (returnedUser: PFUser?, error: Error?) in
-            guard returnedUser == nil else {
+        PFUser.logInWithUsername(inBackground: user.username, password: user.password) { (returnedUser: PFUser?, error: Error?) in
+            guard returnedUser != nil else {
                 failure(error)
                 return
             }
             success(returnedUser)
         }
     }
-    
 }

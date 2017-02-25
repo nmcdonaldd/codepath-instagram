@@ -18,12 +18,19 @@ class ngmAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
             configuration.applicationId = "Nickstagram"
             configuration.clientKey = "29397f3759120ec0b1e329a61fdc027a"
-            configuration.server = "https://aqueous-mountain-26341.herokuapp.com/"
+            configuration.server = "https://aqueous-mountain-26341.herokuapp.com/parse"
         }))
+        
+        if ngmUser.currentUser != nil {
+            // Go to tweets screen since there is a logged in user.
+            print("There is a current User!")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController")
+            window?.rootViewController = vc
+        }
         
         return true
     }

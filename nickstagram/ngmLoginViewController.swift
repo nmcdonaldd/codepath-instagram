@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ngmLoginViewController: UIViewController {
 
@@ -50,17 +51,45 @@ class ngmLoginViewController: UIViewController {
     
     @IBAction func signUpTapped(_ sender: Any) {
         // The button can only be enabled if both of the textFields have text. So we can safely use bang (!) below.
-        let userToSignUp: ngmUser = ngmUser(withUsername: self.usernameTextField.text!, password: self.passwordTextField.text!)
+//        let user: PFUser = PFUser()
+//        user.username = self.usernameTextField.text!
+//        user.password = self.passwordTextField.text!
+//        user.signUpInBackground { (didComplete: Bool, error: Error?) in
+//            if (didComplete) {
+//                print("Signed up!")
+//            } else {
+//                self.handleSignUpError(error: error)
+//            }
+//        }
+        let usernameText: String = self.usernameTextField.text!
+        let passwordText: String = self.passwordTextField.text!
+        let userToSignUp: ngmUser = ngmUser(withUsername: usernameText, password: passwordText)
         userToSignUp.signUpWithParse(success: {
-            print("User has signed up!")
-            // Segue or something.
+            print("User has signed up! Going to log this user in.")
+            self.loginWithUser(userToSignUp)
         }) { (error: Error?) in
             self.handleSignUpError(error: error)
         }
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        
+        // The button can only be enabled if both of the textFields have text. So we can safely use bang (!) below.
+        let usernameText: String = self.usernameTextField.text!
+        let passwordText: String = self.passwordTextField.text!
+        let user: ngmUser = ngmUser(withUsername: usernameText, password: passwordText)
+        self.loginWithUser(user)
+    }
+    
+    private func loginWithUser(_ user: ngmUser) {
+        user.loginWithParse(success: { 
+            // Segue or something
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController: ngmHomeTabBarController = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController") as! ngmHomeTabBarController
+            self.modalPresentationStyle = .popover
+            self.present(tabBarController, animated: true, completion: nil)
+        }) { (error: Error?) in
+            self.handleLoginError(error: error)
+        }
     }
     
     
@@ -75,8 +104,10 @@ class ngmLoginViewController: UIViewController {
     }
     
     private func showErrorWithTitle(_ title: String, withMessage message: String?) {
+        let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction: UIAlertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
         DispatchQueue.main.async {
-            let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             self.present(alertController, animated: true, completion: nil)
         }
     }
