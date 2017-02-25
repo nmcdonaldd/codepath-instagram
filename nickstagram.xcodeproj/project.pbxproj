@@ -24,18 +24,18 @@
 		352F5ED240FB1FFF41DB9D96 /* Pods_nickstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nickstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.release.xcconfig"; sourceTree = "<group>"; };
 		925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.debug.xcconfig"; sourceTree = "<group>"; };
-		D50599E71E6177EF0032A17E /* ngmHomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ngmHomeTabBarController.swift; sourceTree = "<group>"; };
+		D50599E71E6177EF0032A17E /* ngmHomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmHomeTabBarController.swift; path = "UI/View Controllers/ngmHomeTabBarController.swift"; sourceTree = "<group>"; };
 		D532CA691E5D234D008B4176 /* nickstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nickstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D532CA6C1E5D234E008B4176 /* ngmAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ngmAppDelegate.swift; sourceTree = "<group>"; };
-		D532CA6E1E5D234E008B4176 /* ngmLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ngmLoginViewController.swift; sourceTree = "<group>"; };
+		D532CA6E1E5D234E008B4176 /* ngmLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ngmLoginViewController.swift; path = "UI/View Controllers/ngmLoginViewController.swift"; sourceTree = "<group>"; };
 		D532CA711E5D234E008B4176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D532CA731E5D234E008B4176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D532CA761E5D234E008B4176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D532CA781E5D234E008B4176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D55D00C81E60E04800920741 /* ngmLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ngmLoginButton.swift; sourceTree = "<group>"; };
-		D55D00CC1E61013600920741 /* ngmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ngmUser.swift; sourceTree = "<group>"; };
-		D55D00CE1E6106D700920741 /* ngmLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ngmLoginTextField.swift; sourceTree = "<group>"; };
-		D55D00D01E6107F000920741 /* ngmParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ngmParseClient.swift; sourceTree = "<group>"; };
+		D55D00C81E60E04800920741 /* ngmLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmLoginButton.swift; path = UI/Views/ngmLoginButton.swift; sourceTree = "<group>"; };
+		D55D00CC1E61013600920741 /* ngmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmUser.swift; path = Models/ngmUser.swift; sourceTree = "<group>"; };
+		D55D00CE1E6106D700920741 /* ngmLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmLoginTextField.swift; path = UI/Views/ngmLoginTextField.swift; sourceTree = "<group>"; };
+		D55D00D01E6107F000920741 /* ngmParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmParseClient.swift; path = API/ngmParseClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
