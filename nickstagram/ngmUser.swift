@@ -12,13 +12,15 @@ import Parse
 class ngmUser: NSObject {
     
     var username: String!
+    var password: String!
     private(set) var parseUser: PFUser?
     
     init(withUsername username: String, password: String) {
+        self.username = username
+        self.password = password
         let user: PFUser = PFUser()
         user.username = username
         user.password = password
-        
         self.parseUser = user
     }
     
@@ -37,6 +39,37 @@ class ngmUser: NSObject {
             success()
         }) { (error: Error?) in
             failure(error)
+        }
+    }
+    
+    func loginWithParse(success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
+        let parseClient: ngmParseClient = ngmParseClient.sharedInstance
+        parseClient.loginParseUser(self, success: { (user: PFUser?) in
+            guard let _: PFUser = user else {
+                failure(ParseUserError.userSignUpLoginError("Error with user returned from network"))
+                return
+            }
+            ngmUser.currentUser = ngmUser(withPFUser: PFUser.current())
+            success()
+        }) { (error: Error?) in
+            failure(error)
+        }
+    }
+    
+    
+    // MARK: - currentUser
+    
+    static private var _currentUser: ngmUser?
+    
+    class var currentUser: ngmUser? {
+        get {
+            if _currentUser == nil {
+                _currentUser = ngmUser(withPFUser: PFUser.current())
+            }
+            return _currentUser
+        }
+        set {
+            // Nothing
         }
     }
 }
