@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class ngmLoginViewController: UIViewController {
 
@@ -51,16 +50,6 @@ class ngmLoginViewController: UIViewController {
     
     @IBAction func signUpTapped(_ sender: Any) {
         // The button can only be enabled if both of the textFields have text. So we can safely use bang (!) below.
-//        let user: PFUser = PFUser()
-//        user.username = self.usernameTextField.text!
-//        user.password = self.passwordTextField.text!
-//        user.signUpInBackground { (didComplete: Bool, error: Error?) in
-//            if (didComplete) {
-//                print("Signed up!")
-//            } else {
-//                self.handleSignUpError(error: error)
-//            }
-//        }
         let usernameText: String = self.usernameTextField.text!
         let passwordText: String = self.passwordTextField.text!
         let userToSignUp: ngmUser = ngmUser(withUsername: usernameText, password: passwordText)
