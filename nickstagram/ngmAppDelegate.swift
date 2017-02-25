@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class ngmAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
+            configuration.applicationId = "Nickstagram"
+            configuration.clientKey = "29397f3759120ec0b1e329a61fdc027a"
+            configuration.server = "https://aqueous-mountain-26341.herokuapp.com/"
+        }))
+        
         return true
     }
 
