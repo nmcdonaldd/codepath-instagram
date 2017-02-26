@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mC-7a-TX2">
-                                <rect key="frame" x="94" y="28" width="187.5" height="56"/>
+                                <rect key="frame" x="94" y="28" width="188" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickstagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hev-19-XDe">
-                                        <rect key="frame" x="56" y="15" width="123.5" height="26"/>
+                                        <rect key="frame" x="56" y="15" width="124" height="26"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -167,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="kt0-7T-rR4">
             <objects>
                 <viewController id="6G4-LD-93k" sceneMemberID="viewController">
@@ -180,13 +180,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="L2L-AQ-qYu"/>
+                    <tabBarItem key="tabBarItem" title="" image="Plus Math Filled-50" id="L2L-AQ-qYu">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKS-9S-IMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="104"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="VXw-Ru-jwO">
             <objects>
                 <viewController id="znr-uH-B6C" sceneMemberID="viewController">
@@ -199,7 +201,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="uO6-V4-1RA"/>
+                    <tabBarItem key="tabBarItem" title="" image="User-48" id="uO6-V4-1RA">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G9-0S-6eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,14 +226,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" rowHeight="433" id="WH1-lZ-FoG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="postTableViewCell" rowHeight="433" id="WH1-lZ-FoG" customClass="ngmPostTableViewCell" customModule="nickstagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="433"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WH1-lZ-FoG" id="SN9-ob-P3o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="375" id="fs3-2f-BQI"/>
@@ -253,6 +257,10 @@
                                                 <constraint firstItem="9Ot-Od-XH5" firstAttribute="top" secondItem="SN9-ob-P3o" secondAttribute="top" id="pqP-Az-ax1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postCaptionLabel" destination="MDB-7A-QRA" id="CIa-2e-pPO"/>
+                                            <outlet property="postImageView" destination="9Ot-Od-XH5" id="3nU-1z-Jg5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -293,11 +301,13 @@
             </objects>
             <point key="canvasLocation" x="1002" y="35"/>
         </scene>
-        <!--Item 1-->
+        <!--Ngm Base Navigation Controller-->
         <scene sceneID="Imq-bI-Yb4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7fQ-qH-hyc" customClass="ngmBaseNavigationController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Lo9-XO-tPO"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home" id="Lo9-XO-tPO">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="50P-NN-qCA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -314,7 +324,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Plus Math Filled-50" width="25" height="25"/>
+        <image name="User-48" width="24" height="24"/>
         <image name="camera1" width="350" height="350"/>
+        <image name="home" width="32" height="32"/>
         <image name="saber-4k" width="1920" height="1080"/>
     </resources>
 </document>

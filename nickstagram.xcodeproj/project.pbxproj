@@ -24,6 +24,7 @@
 		D571CBF01E62ACFC00393690 /* ngmBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBEF1E62ACFC00393690 /* ngmBaseNavigationController.swift */; };
 		D571CBF31E62AD3300393690 /* ngmKeyDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF21E62AD3300393690 /* ngmKeyDefinitions.swift */; };
 		D571CBF51E62C21400393690 /* ngmPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF41E62C21400393690 /* ngmPostsViewController.swift */; };
+		D571CBF71E63813C00393690 /* ngmPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D571CBEF1E62ACFC00393690 /* ngmBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmBaseNavigationController.swift; path = "UI/View Controllers/ngmBaseNavigationController.swift"; sourceTree = "<group>"; };
 		D571CBF21E62AD3300393690 /* ngmKeyDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmKeyDefinitions.swift; path = "Supporting Files/ngmKeyDefinitions.swift"; sourceTree = "<group>"; };
 		D571CBF41E62C21400393690 /* ngmPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPostsViewController.swift; path = "UI/View Controllers/ngmPostsViewController.swift"; sourceTree = "<group>"; };
+		D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPostTableViewCell.swift; path = UI/Views/ngmPostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				D55D00C81E60E04800920741 /* ngmLoginButton.swift */,
 				D55D00CE1E6106D700920741 /* ngmLoginTextField.swift */,
 				D571CBEB1E62534000393690 /* ngmPhotoSectionHeaderView.swift */,
+				D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				D55D00CD1E61013600920741 /* ngmUser.swift in Sources */,
 				D571CBF01E62ACFC00393690 /* ngmBaseNavigationController.swift in Sources */,
 				D55D00CF1E6106D700920741 /* ngmLoginTextField.swift in Sources */,
+				D571CBF71E63813C00393690 /* ngmPostTableViewCell.swift in Sources */,
 				D55D00D11E6107F000920741 /* ngmParseClient.swift in Sources */,
 				D532CA6F1E5D234E008B4176 /* ngmLoginViewController.swift in Sources */,
 				D571CBEE1E625A2A00393690 /* ngmPost.swift in Sources */,

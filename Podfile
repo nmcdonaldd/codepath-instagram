@@ -7,6 +7,7 @@ target 'nickstagram' do
 
   # Pods for nickstagram
   pod 'Parse'
+  pod 'ParseUI'
   pod 'SwiftDate'
   pod 'SVProgressHUD'
 

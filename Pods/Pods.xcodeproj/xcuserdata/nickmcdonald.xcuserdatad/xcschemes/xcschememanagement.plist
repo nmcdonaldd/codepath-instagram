@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-nickstagram.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89BDC4833C27E1C3421DB5333E013435</key>
+		<key>7651CDB030F8F3DC02C77B192E6476D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96C199A364E33A8AE0D4037368661865</key>
+		<key>A760316124FD796EF09C09479E9F0021</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA025CAD09843890DC88BA0007B265C3</key>
+		<key>BE60B7C4010845D06A8C41E40BFAF2E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E79FE89EE8C40D78741C15071F840F6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -17,7 +17,7 @@ class ngmPostsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "nickstagram"
+        self.navigationItem.title = "nickstagram"
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +26,21 @@ class ngmPostsViewController: UIViewController {
     }
 }
 
-extension ngmPostsViewController: UITableViewDataSource {
+extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: ngmPostTableViewCell = self.postsTableView.dequeueReusableCell(withIdentifier: "postTableViewCell", for: indexPath) as! ngmPostTableViewCell
+        
+        cell.postData = self.posts![indexPath.section]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let sectionHeaderView: ngmPhotoSectionHeaderView = UINib(nibName: "ngmPhotoSectionHeader", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ngmPhotoSectionHeaderView
+        sectionHeaderView.postData = self.posts![section]
+        return sectionHeaderView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,5 +50,4 @@ extension ngmPostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
 }
