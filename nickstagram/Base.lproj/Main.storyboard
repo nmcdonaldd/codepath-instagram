@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1001" y="1101"/>
         </scene>
-        <!--Item 1-->
+        <!--Ngm Posts View Controller-->
         <scene sceneID="Epg-gu-XWM">
             <objects>
-                <viewController id="4rx-LS-MoF" sceneMemberID="viewController">
+                <viewController id="4rx-LS-MoF" customClass="ngmPostsViewController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gZ7-5b-HyW"/>
                         <viewControllerLayoutGuide type="bottom" id="3XF-yL-YTA"/>
@@ -216,13 +216,63 @@
                     <view key="view" contentMode="scaleToFill" id="XrB-VT-ScE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="433" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-kU-8Zf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" rowHeight="433" id="WH1-lZ-FoG">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="433"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WH1-lZ-FoG" id="SN9-ob-P3o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="375" id="fs3-2f-BQI"/>
+                                                        <constraint firstAttribute="width" constant="375" id="vzC-pI-3Pa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A beautiful image" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDB-7A-QRA">
+                                                    <rect key="frame" x="8" y="383" width="359" height="20"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MDB-7A-QRA" secondAttribute="trailing" constant="8" id="DqT-BE-UKq"/>
+                                                <constraint firstItem="9Ot-Od-XH5" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" id="NR1-Dh-ih0"/>
+                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="top" secondItem="9Ot-Od-XH5" secondAttribute="bottom" constant="8" id="RxU-Pv-UZM"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MDB-7A-QRA" secondAttribute="bottom" constant="8" id="kSc-Zt-WPZ"/>
+                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" constant="8" id="peD-ty-cJu"/>
+                                                <constraint firstItem="9Ot-Od-XH5" firstAttribute="top" secondItem="SN9-ob-P3o" secondAttribute="top" id="pqP-Az-ax1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WDd-kU-8Zf" secondAttribute="bottom" id="7J8-KD-lKx"/>
+                            <constraint firstAttribute="trailing" secondItem="WDd-kU-8Zf" secondAttribute="trailing" id="a4E-Dz-pyd"/>
+                            <constraint firstItem="WDd-kU-8Zf" firstAttribute="leading" secondItem="XrB-VT-ScE" secondAttribute="leading" id="eHx-be-9uh"/>
+                            <constraint firstItem="WDd-kU-8Zf" firstAttribute="top" secondItem="XrB-VT-ScE" secondAttribute="top" id="gkh-1s-flw"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Lo9-XO-tPO"/>
+                    <navigationItem key="navigationItem" id="dAC-vs-uRs"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="WDd-kU-8Zf" id="aLc-wN-sfL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHd-r3-fV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-595"/>
+            <point key="canvasLocation" x="2751.1999999999998" y="-595.05247376311854"/>
         </scene>
         <!--Ngm Home Tab Bar Controller-->
         <scene sceneID="2c1-Fj-TMK">
@@ -234,7 +284,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4rx-LS-MoF" kind="relationship" relationship="viewControllers" id="5nh-gv-DAU"/>
+                        <segue destination="7fQ-qH-hyc" kind="relationship" relationship="viewControllers" id="5nh-gv-DAU"/>
                         <segue destination="6G4-LD-93k" kind="relationship" relationship="viewControllers" id="BVS-uV-nog"/>
                         <segue destination="znr-uH-B6C" kind="relationship" relationship="viewControllers" id="SUl-pa-5fO"/>
                     </connections>
@@ -242,6 +292,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsV-wI-BY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002" y="35"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Imq-bI-Yb4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7fQ-qH-hyc" customClass="ngmBaseNavigationController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Lo9-XO-tPO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="50P-NN-qCA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4rx-LS-MoF" kind="relationship" relationship="rootViewController" id="FMg-Ci-6Gv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dK1-oA-RLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="-595.05247376311854"/>
         </scene>
     </scenes>
     <resources>

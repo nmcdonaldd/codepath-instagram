@@ -14,6 +14,9 @@ class ngmHomeTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tabBar.barTintColor = ngmDefaultAppColor
+        self.tabBar.tintColor = .white
+        
     }
 
     override func didReceiveMemoryWarning() {
