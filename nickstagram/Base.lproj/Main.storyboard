@@ -60,7 +60,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-XU-wvd" customClass="ngmLoginTextField" customModule="nickstagram" customModuleProvider="target">
                                 <rect key="frame" x="32" y="227" width="311" height="35"/>
@@ -267,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="2751.1999999999998" y="103.89805097451276"/>
         </scene>
-        <!--View Controller-->
+        <!--Ngm Profile View Controller-->
         <scene sceneID="VXw-Ru-jwO">
             <objects>
-                <viewController id="znr-uH-B6C" sceneMemberID="viewController">
+                <viewController id="znr-uH-B6C" customClass="ngmProfileViewController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HX2-8d-NzM"/>
                         <viewControllerLayoutGuide type="bottom" id="Chd-De-5y9"/>
@@ -278,15 +278,30 @@
                     <view key="view" contentMode="scaleToFill" id="kCv-JD-AvJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STp-Kg-Mkk">
+                                <rect key="frame" x="156.5" y="315.5" width="61" height="35"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="19"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="znr-uH-B6C" eventType="touchUpInside" id="Upu-4K-AFm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="STp-Kg-Mkk" firstAttribute="centerX" secondItem="kCv-JD-AvJ" secondAttribute="centerX" id="Hjw-jj-xtC"/>
+                            <constraint firstItem="STp-Kg-Mkk" firstAttribute="centerY" secondItem="kCv-JD-AvJ" secondAttribute="centerY" id="prX-PS-Kb5"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="User-48" id="uO6-V4-1RA">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="e40-vp-snZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G9-0S-6eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="1101"/>
+            <point key="canvasLocation" x="1940" y="1100.5997001499252"/>
         </scene>
         <!--Ngm Posts View Controller-->
         <scene sceneID="Epg-gu-XWM">
@@ -374,7 +389,7 @@
                     <connections>
                         <segue destination="7fQ-qH-hyc" kind="relationship" relationship="viewControllers" id="5nh-gv-DAU"/>
                         <segue destination="fCA-Df-sW4" kind="relationship" relationship="viewControllers" id="BVS-uV-nog"/>
-                        <segue destination="znr-uH-B6C" kind="relationship" relationship="viewControllers" id="SUl-pa-5fO"/>
+                        <segue destination="vg6-Za-7DS" kind="relationship" relationship="viewControllers" id="SUl-pa-5fO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsV-wI-BY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,7 +404,7 @@
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="50P-NN-qCA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="50P-NN-qCA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -422,6 +437,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8T-KH-Dms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="103.89805097451276"/>
+        </scene>
+        <!--Ngm Base Navigation Controller-->
+        <scene sceneID="Owo-j2-hxm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vg6-Za-7DS" customClass="ngmBaseNavigationController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="User-48" id="uO6-V4-1RA">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="93e-j0-sbO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="znr-uH-B6C" kind="relationship" relationship="rootViewController" id="vGa-lv-llk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWV-gb-HFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="1100.5997001499252"/>
         </scene>
     </scenes>
     <resources>

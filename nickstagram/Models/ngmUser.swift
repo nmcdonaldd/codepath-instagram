@@ -56,6 +56,11 @@ class ngmUser: NSObject {
         }
     }
     
+    class func logoutCurrentUser() {
+        PFUser.logOut()
+        NotificationCenter.default.post(name: UserNotificationCenterOps.userDidLogout.notification, object: nil)
+    }
+    
     
     // MARK: - currentUser
     

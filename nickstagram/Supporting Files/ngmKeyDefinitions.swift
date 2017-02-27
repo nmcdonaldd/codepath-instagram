@@ -17,3 +17,11 @@ enum ngmTabBarViewControllers: Int {
     case postToParseViewController
     case profileViewController
 }
+
+enum UserNotificationCenterOps: String {
+    case userDidLogout = "UserDidLogOut"
+    
+    var notification: Notification.Name {
+        return Notification.Name(rawValue: self.rawValue)
+    }
+}
