@@ -61,37 +61,39 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 20
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerViewHeight: CGFloat = 26
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
-        headerView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = headerView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        headerView.addSubview(blurEffectView)
-        
-        let usernameLabel: UILabel = UILabel() //UILabel(frame: CGRect(x: 8, y: 6, width: UIScreen.main.bounds.width - 8, height: 14))
-        usernameLabel.text = self.posts![section].postAuthor!.username
-        usernameLabel.textColor = UIColor.white
-        usernameLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
-        usernameLabel.sizeToFit()
-        let usernameFrame: CGRect = CGRect(x: 8, y: 6, width: usernameLabel.frame.size.width, height: 14)
-        usernameLabel.frame = usernameFrame
-        headerView.addSubview(usernameLabel)
-        
-        let createdAtLabel: UILabel = UILabel()
-        createdAtLabel.text = self.posts![section].formattedCreatedAt
-        createdAtLabel.textColor = UIColor.white
-        createdAtLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
-        createdAtLabel.sizeToFit()
-        let createdAtFrame: CGRect = CGRect(x: (UIScreen.main.bounds.width - 8) - createdAtLabel.frame.size.width, y: 6, width: createdAtLabel.frame.size.width, height: 14)
-        createdAtLabel.frame = createdAtFrame
-        headerView.addSubview(createdAtLabel)
+        let headerView: UIView = UIView()
+        headerView.backgroundColor = UIColor.clear
+//        let headerViewHeight: CGFloat = 26
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
+//        headerView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
+//        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = headerView.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        headerView.addSubview(blurEffectView)
+//        
+//        let usernameLabel: UILabel = UILabel() //UILabel(frame: CGRect(x: 8, y: 6, width: UIScreen.main.bounds.width - 8, height: 14))
+//        usernameLabel.text = self.posts![section].postAuthor!.username
+//        usernameLabel.textColor = UIColor.white
+//        usernameLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
+//        usernameLabel.sizeToFit()
+//        let usernameFrame: CGRect = CGRect(x: 8, y: 6, width: usernameLabel.frame.size.width, height: 14)
+//        usernameLabel.frame = usernameFrame
+//        headerView.addSubview(usernameLabel)
+//        
+//        let createdAtLabel: UILabel = UILabel()
+//        createdAtLabel.text = self.posts![section].formattedCreatedAt
+//        createdAtLabel.textColor = UIColor.white
+//        createdAtLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
+//        createdAtLabel.sizeToFit()
+//        let createdAtFrame: CGRect = CGRect(x: (UIScreen.main.bounds.width - 8) - createdAtLabel.frame.size.width, y: 6, width: createdAtLabel.frame.size.width, height: 14)
+//        createdAtLabel.frame = createdAtFrame
+//        headerView.addSubview(createdAtLabel)
         
         return headerView
     }

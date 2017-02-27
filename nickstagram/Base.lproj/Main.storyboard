@@ -328,31 +328,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="375" id="fs3-2f-BQI"/>
-                                                        <constraint firstAttribute="width" constant="375" id="vzC-pI-3Pa"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A beautiful image" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDB-7A-QRA">
-                                                    <rect key="frame" x="8" y="383" width="359" height="20"/>
-                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                    <rect key="frame" x="16" y="367" width="351" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-my-LDP">
+                                                    <rect key="frame" x="16" y="16" width="343" height="343"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5" customClass="PFImageView">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="343" id="fs3-2f-BQI"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gAc-w4-da1">
+                                                            <rect key="frame" x="161" y="162" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gAc-w4-da1" firstAttribute="centerX" secondItem="xFI-my-LDP" secondAttribute="centerX" id="Im0-2K-rBF"/>
+                                                        <constraint firstItem="9Ot-Od-XH5" firstAttribute="leading" secondItem="xFI-my-LDP" secondAttribute="leading" id="QV9-3f-g2n"/>
+                                                        <constraint firstAttribute="height" constant="343" id="Sof-1L-bPd"/>
+                                                        <constraint firstItem="9Ot-Od-XH5" firstAttribute="top" secondItem="xFI-my-LDP" secondAttribute="top" id="UW8-UR-MUO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9Ot-Od-XH5" secondAttribute="trailing" id="dtm-w2-LbU"/>
+                                                        <constraint firstItem="gAc-w4-da1" firstAttribute="centerY" secondItem="xFI-my-LDP" secondAttribute="centerY" id="eVs-uh-zSn"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="xFI-my-LDP" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" constant="16" id="4P1-Wf-X8j"/>
+                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="top" secondItem="xFI-my-LDP" secondAttribute="bottom" constant="8" id="7zw-U1-Pzp"/>
                                                 <constraint firstAttribute="trailing" secondItem="MDB-7A-QRA" secondAttribute="trailing" constant="8" id="DqT-BE-UKq"/>
-                                                <constraint firstItem="9Ot-Od-XH5" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" id="NR1-Dh-ih0"/>
-                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="top" secondItem="9Ot-Od-XH5" secondAttribute="bottom" constant="8" id="RxU-Pv-UZM"/>
+                                                <constraint firstAttribute="trailing" secondItem="xFI-my-LDP" secondAttribute="trailing" constant="16" id="JND-Ez-1NO"/>
+                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="leading" secondItem="xFI-my-LDP" secondAttribute="leading" id="bKv-ss-8Hx"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MDB-7A-QRA" secondAttribute="bottom" constant="8" id="kSc-Zt-WPZ"/>
-                                                <constraint firstItem="MDB-7A-QRA" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" constant="8" id="peD-ty-cJu"/>
-                                                <constraint firstItem="9Ot-Od-XH5" firstAttribute="top" secondItem="SN9-ob-P3o" secondAttribute="top" id="pqP-Az-ax1"/>
+                                                <constraint firstItem="xFI-my-LDP" firstAttribute="top" secondItem="SN9-ob-P3o" secondAttribute="top" constant="16" id="mpt-6a-hSN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageLoadingActivityView" destination="gAc-w4-da1" id="PC7-K9-8Cx"/>
                                             <outlet property="postCaptionLabel" destination="MDB-7A-QRA" id="CIa-2e-pPO"/>
                                             <outlet property="postImageView" destination="9Ot-Od-XH5" id="3nU-1z-Jg5"/>
                                         </connections>
