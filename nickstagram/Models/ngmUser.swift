@@ -46,7 +46,7 @@ class ngmUser: NSObject {
         let parseClient: ngmParseClient = ngmParseClient.sharedInstance
         parseClient.loginParseUser(self, success: { (user: PFUser?) in
             guard let _: PFUser = user else {
-                failure(ParseUserError.userSignUpLoginError("Error with user returned from network"))
+                failure(ParseClientError.userSignUpLoginError("Error with user returned from network"))
                 return
             }
             ngmUser.currentUser = ngmUser(withPFUser: PFUser.current())
