@@ -7,5 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 let ngmDefaultAppColor: UIColor = .black
+let postParseClassNameIdentifier: String = "Post"
+
+enum ngmTabBarViewControllers: Int {
+    case homeViewController
+    case postToParseViewController
+    case profileViewController
+}

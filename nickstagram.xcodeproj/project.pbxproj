@@ -25,6 +25,8 @@
 		D571CBF31E62AD3300393690 /* ngmKeyDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF21E62AD3300393690 /* ngmKeyDefinitions.swift */; };
 		D571CBF51E62C21400393690 /* ngmPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF41E62C21400393690 /* ngmPostsViewController.swift */; };
 		D571CBF71E63813C00393690 /* ngmPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */; };
+		D5B2419D1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B2419C1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift */; };
+		D5B2419F1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B2419E1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		D571CBF21E62AD3300393690 /* ngmKeyDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmKeyDefinitions.swift; path = "Supporting Files/ngmKeyDefinitions.swift"; sourceTree = "<group>"; };
 		D571CBF41E62C21400393690 /* ngmPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPostsViewController.swift; path = "UI/View Controllers/ngmPostsViewController.swift"; sourceTree = "<group>"; };
 		D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPostTableViewCell.swift; path = UI/Views/ngmPostTableViewCell.swift; sourceTree = "<group>"; };
+		D5B2419C1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPostPhotoViewController.swift; path = "UI/View Controllers/ngmPostPhotoViewController.swift"; sourceTree = "<group>"; };
+		D5B2419E1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmPhotoCaptionTextView.swift; path = UI/Views/ngmPhotoCaptionTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				D50599E71E6177EF0032A17E /* ngmHomeTabBarController.swift */,
 				D571CBEF1E62ACFC00393690 /* ngmBaseNavigationController.swift */,
 				D571CBF41E62C21400393690 /* ngmPostsViewController.swift */,
+				D5B2419C1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				D55D00CE1E6106D700920741 /* ngmLoginTextField.swift */,
 				D571CBEB1E62534000393690 /* ngmPhotoSectionHeaderView.swift */,
 				D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */,
+				D5B2419E1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				D55D00CD1E61013600920741 /* ngmUser.swift in Sources */,
 				D571CBF01E62ACFC00393690 /* ngmBaseNavigationController.swift in Sources */,
 				D55D00CF1E6106D700920741 /* ngmLoginTextField.swift in Sources */,
+				D5B2419F1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift in Sources */,
 				D571CBF71E63813C00393690 /* ngmPostTableViewCell.swift in Sources */,
 				D55D00D11E6107F000920741 /* ngmParseClient.swift in Sources */,
 				D532CA6F1E5D234E008B4176 /* ngmLoginViewController.swift in Sources */,
@@ -325,6 +332,7 @@
 				D532CA6D1E5D234E008B4176 /* ngmAppDelegate.swift in Sources */,
 				D571CBF51E62C21400393690 /* ngmPostsViewController.swift in Sources */,
 				D571CBF31E62AD3300393690 /* ngmKeyDefinitions.swift in Sources */,
+				D5B2419D1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift in Sources */,
 				D571CBEC1E62534000393690 /* ngmPhotoSectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

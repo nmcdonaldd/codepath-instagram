@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
-        <!--View Controller-->
+        <!--Ngm Post Photo View Controller-->
         <scene sceneID="kt0-7T-rR4">
             <objects>
-                <viewController id="6G4-LD-93k" sceneMemberID="viewController">
+                <viewController id="6G4-LD-93k" customClass="ngmPostPhotoViewController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tio-IB-qRF"/>
                         <viewControllerLayoutGuide type="bottom" id="zsZ-Mr-UsV"/>
@@ -178,15 +178,94 @@
                     <view key="view" contentMode="scaleToFill" id="J49-m6-4Mz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-xU-lww">
+                                <rect key="frame" x="16" y="80" width="343" height="250"/>
+                                <subviews>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-Ip-hEf" customClass="PFImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
+                                    </imageView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-r7-fjG">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n4-gp-TSV">
+                                                <rect key="frame" x="76" y="115" width="191" height="20"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.49510380993150682" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1n4-gp-TSV" firstAttribute="centerY" secondItem="1bx-r7-fjG" secondAttribute="centerY" id="dd7-fp-boS"/>
+                                            <constraint firstItem="1n4-gp-TSV" firstAttribute="centerX" secondItem="1bx-r7-fjG" secondAttribute="centerX" id="gei-GW-ArE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="B9D-Ip-hEf" firstAttribute="leading" secondItem="kZR-xU-lww" secondAttribute="leading" id="0lJ-t4-vnB"/>
+                                    <constraint firstItem="1bx-r7-fjG" firstAttribute="leading" secondItem="kZR-xU-lww" secondAttribute="leading" id="ECT-hb-Yk1"/>
+                                    <constraint firstItem="B9D-Ip-hEf" firstAttribute="width" secondItem="kZR-xU-lww" secondAttribute="width" id="Eut-2H-7VE"/>
+                                    <constraint firstItem="1bx-r7-fjG" firstAttribute="width" secondItem="kZR-xU-lww" secondAttribute="width" id="HIk-ro-2Iw"/>
+                                    <constraint firstItem="B9D-Ip-hEf" firstAttribute="top" secondItem="kZR-xU-lww" secondAttribute="top" id="PMJ-I4-iht"/>
+                                    <constraint firstItem="1bx-r7-fjG" firstAttribute="height" secondItem="kZR-xU-lww" secondAttribute="height" id="VDV-9K-Iuw"/>
+                                    <constraint firstAttribute="width" constant="343" id="a9u-tS-MsX"/>
+                                    <constraint firstItem="B9D-Ip-hEf" firstAttribute="height" secondItem="kZR-xU-lww" secondAttribute="height" id="f6I-v2-EVB"/>
+                                    <constraint firstItem="1bx-r7-fjG" firstAttribute="top" secondItem="kZR-xU-lww" secondAttribute="top" id="mWo-ki-rWN"/>
+                                    <constraint firstAttribute="height" constant="250" id="qPi-zc-eWB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Lr-L6l">
+                                <rect key="frame" x="16" y="338" width="343" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.7536922089041096" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Tme-g1-JXG"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-R5-nCk" customClass="ngmPhotoCaptionTextView" customModule="nickstagram" customModuleProvider="target">
+                                <rect key="frame" x="16" y="343" width="343" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7RH-wp-BY1"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sBU-Lr-L6l" firstAttribute="trailing" secondItem="kZR-xU-lww" secondAttribute="trailing" id="2pD-Nv-5Xd"/>
+                            <constraint firstItem="kZR-xU-lww" firstAttribute="leading" secondItem="J49-m6-4Mz" secondAttribute="leading" constant="16" id="AqK-5Y-mnG"/>
+                            <constraint firstItem="kZR-xU-lww" firstAttribute="top" secondItem="Tio-IB-qRF" secondAttribute="bottom" constant="16" id="B8m-SV-vuz"/>
+                            <constraint firstItem="sBU-Lr-L6l" firstAttribute="leading" secondItem="kZR-xU-lww" secondAttribute="leading" id="Fco-6f-LK2"/>
+                            <constraint firstItem="L6A-R5-nCk" firstAttribute="top" secondItem="sBU-Lr-L6l" secondAttribute="bottom" constant="4" id="LSP-qx-Rl6"/>
+                            <constraint firstItem="L6A-R5-nCk" firstAttribute="leading" secondItem="sBU-Lr-L6l" secondAttribute="leading" id="Tsj-ki-00I"/>
+                            <constraint firstItem="sBU-Lr-L6l" firstAttribute="top" secondItem="kZR-xU-lww" secondAttribute="bottom" constant="8" id="hm1-ld-Ioy"/>
+                            <constraint firstItem="L6A-R5-nCk" firstAttribute="trailing" secondItem="sBU-Lr-L6l" secondAttribute="trailing" id="oBg-Ng-DUd"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Plus Math Filled-50" id="L2L-AQ-qYu">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="WwI-1K-qeM">
+                        <barButtonItem key="rightBarButtonItem" title="Post" style="done" id="0xu-cM-Tco">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="postButtonTapped:" destination="6G4-LD-93k" id="3hc-zx-Epu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextViewHeightConstraint" destination="7RH-wp-BY1" id="aqG-Co-B4d"/>
+                        <outlet property="noImageYetContentView" destination="1bx-r7-fjG" id="Kve-RL-1uI"/>
+                        <outlet property="photoCaptionTextView" destination="L6A-R5-nCk" id="2ng-Gj-Pzm"/>
+                        <outlet property="postImageView" destination="B9D-Ip-hEf" id="JjW-Os-mOu"/>
+                        <outlet property="postPhotobarButtonItem" destination="0xu-cM-Tco" id="tgi-fR-Po7"/>
+                        <outlet property="tapToAddImageLabel" destination="1n4-gp-TSV" id="3yD-Kc-0ET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKS-9S-IMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="104"/>
+            <point key="canvasLocation" x="2751.1999999999998" y="103.89805097451276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VXw-Ru-jwO">
@@ -221,9 +300,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="433" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-kU-8Zf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="433" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-kU-8Zf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="postTableViewCell" rowHeight="433" id="WH1-lZ-FoG" customClass="ngmPostTableViewCell" customModule="nickstagram" customModuleProvider="target">
@@ -233,7 +313,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-Od-XH5" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="375" id="fs3-2f-BQI"/>
@@ -293,7 +373,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="7fQ-qH-hyc" kind="relationship" relationship="viewControllers" id="5nh-gv-DAU"/>
-                        <segue destination="6G4-LD-93k" kind="relationship" relationship="viewControllers" id="BVS-uV-nog"/>
+                        <segue destination="fCA-Df-sW4" kind="relationship" relationship="viewControllers" id="BVS-uV-nog"/>
                         <segue destination="znr-uH-B6C" kind="relationship" relationship="viewControllers" id="SUl-pa-5fO"/>
                     </connections>
                 </tabBarController>
@@ -309,7 +389,7 @@
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="50P-NN-qCA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="50P-NN-qCA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -321,6 +401,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK1-oA-RLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="-595.05247376311854"/>
+        </scene>
+        <!--Ngm Base Navigation Controller-->
+        <scene sceneID="4b1-cL-q4r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCA-Df-sW4" customClass="ngmBaseNavigationController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Plus Math Filled-50" id="L2L-AQ-qYu">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ak-lv-ZRg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6G4-LD-93k" kind="relationship" relationship="rootViewController" id="JPN-bi-cH6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8T-KH-Dms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="103.89805097451276"/>
         </scene>
     </scenes>
     <resources>

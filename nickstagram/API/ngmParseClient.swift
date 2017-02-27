@@ -9,8 +9,9 @@
 import UIKit
 import Parse
 
-enum ParseUserError: Error {
+enum ParseClientError: Error {
     case userSignUpLoginError(String)
+    case postFailedToPost(String)
 }
 
 typealias ngmUserResultFailureBlock = (Error?)->()
@@ -25,7 +26,7 @@ class ngmParseClient: NSObject {
     // Sign up the user with Parse.
     func signUpParseUser(_ user: ngmUser, success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
         guard let parseUser: PFUser = user.parseUser else {
-            failure(ParseUserError.userSignUpLoginError("Error, no PFUser in ngmUser"))
+            failure(ParseClientError.userSignUpLoginError("Error, no PFUser in ngmUser"))
             return
         }
         parseUser.signUpInBackground { (didComplete: Bool, error: Error?) in
@@ -48,15 +49,31 @@ class ngmParseClient: NSObject {
         }
     }
     
+    // Post a post objec to Parse.
+    func postNewPostingToParse(_ post: ngmPost, success: @escaping ()->(), failure: @escaping (Error?)->()) {
+        guard let postObject: PFObject = post.postObject else {
+            failure(ParseClientError.postFailedToPost("Post PFObject is nil!"))
+            return
+        }
+        postObject.saveInBackground { (didComplete: Bool, error: Error?) in
+            if (didComplete) {
+                success()
+            } else {
+                failure(error)
+            }
+        }
+    }
+    
     // Get posts from Parse.
     func getPosts(success: @escaping ([PFObject]?)->(), failure: @escaping (Error?)->()) {
-        let query: PFQuery = PFQuery(className: "Post")
+        let query: PFQuery = PFQuery(className: postParseClassNameIdentifier)
         query.order(byDescending: "createdAt")
         query.includeKey("author")
+        query.includeKey("createdAt")
         query.limit = 20
         
         query.findObjectsInBackground { (postObjects: [PFObject]?, error: Error?) in
-            guard error != nil else {
+            guard error == nil else {
                 failure(error)
                 return
             }

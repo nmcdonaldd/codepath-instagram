@@ -13,9 +13,20 @@ class ngmPhotoSectionHeaderView: UIView {
     @IBOutlet var sectionHeaderContentView: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
     
-    var postData: ngmPost?
+    var postData: ngmPost? {
+        didSet {
+            self.usernameLabel.text = postData?.postAuthor?.username
+            self.createdAtLabel.text = "Just now"
+        }
+    }
+    
+    init() {
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        let subView: UIView = self.loadSubviews()
+        subView.frame = self.bounds
+        self.addSubview(subView)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
