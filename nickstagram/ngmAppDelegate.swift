@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import SVProgressHUD
 
+
 @UIApplicationMain
 class ngmAppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -32,6 +33,12 @@ class ngmAppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController")
             window?.rootViewController = vc
+        }
+        
+        NotificationCenter.default.addObserver(forName: UserNotificationCenterOps.userDidLogout.notification, object: nil, queue: OperationQueue.main) { (notification: Notification) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()
+            self.window?.rootViewController = vc
         }
         
         return true
