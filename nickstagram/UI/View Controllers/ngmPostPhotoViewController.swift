@@ -45,9 +45,15 @@ class ngmPostPhotoViewController: UIViewController {
         let addPhotoTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ngmPostPhotoViewController.userTappedToAddPhoto))
         self.noImageYetContentView.addGestureRecognizer(addPhotoTapRecognizer)
         
+        let changePhotoTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ngmPostPhotoViewController.userTappedImageView))
+        self.postImageView.addGestureRecognizer(changePhotoTapRecognizer)
+        self.postImageView.isUserInteractionEnabled = true
+        
         // Set the imagePickerController.
         self.imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
     }
     
     @IBAction func postButtonTapped(_ sender: Any) {
@@ -79,6 +85,8 @@ class ngmPostPhotoViewController: UIViewController {
         self.postImageView.isHidden = true
         self.noImageYetContentView.isHidden = false
         self.photoCaptionTextView.text = ""
+        self.postImageView.image = nil
+        self.postPhotobarButtonItem.isEnabled = false
     }
     
     private func resizeImage(_ image: UIImage, newSize: CGSize) -> UIImage {
@@ -93,10 +101,31 @@ class ngmPostPhotoViewController: UIViewController {
         return newImage!
     }
     
-    func userTappedToAddPhoto() {
-        self.imagePicker.allowsEditing = false
-        self.imagePicker.sourceType = .photoLibrary
-        self.present(imagePicker, animated: true, completion: nil)
+    @objc private func userTappedToAddPhoto() {
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc private func userTappedImageView() {
+        // Don't need to do anything. Only want to add action if the user wants to change photos.
+        guard postImageView.image != nil else {
+            return
+        }
+        
+        let alertController: UIAlertController = UIAlertController(title: "Change/Remove photo", message: nil, preferredStyle: .actionSheet)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { (action: UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let removePhotoAction: UIAlertAction = UIAlertAction(title: "Remove Photo", style: .destructive) { (action: UIAlertAction) in
+            self.resetViewsToDefault()
+        }
+        let changePhotoAction: UIAlertAction = UIAlertAction(title: "Change Photo", style: .default) { (action: UIAlertAction) in
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(changePhotoAction)
+        alertController.addAction(removePhotoAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,7 +142,16 @@ extension ngmPostPhotoViewController: UIImagePickerControllerDelegate, UINavigat
         self.postImageView.contentMode = .scaleAspectFill
         self.postImageView.isHidden = false
         self.noImageYetContentView.isHidden = true
-        self.postPhotobarButtonItem.isEnabled = !self.photoCaptionTextView.text.isEmpty
+        
+        // Determine whether or not we should enable the post button.
+        if (!self.photoCaptionTextView.text.isEmpty) {
+            if (self.photoCaptionTextView.textColor == UIColor.lightGray) {
+                self.postPhotobarButtonItem.isEnabled = false
+            } else {
+                self.postPhotobarButtonItem.isEnabled = true
+            }
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     

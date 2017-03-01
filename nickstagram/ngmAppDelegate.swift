@@ -13,18 +13,21 @@ import SVProgressHUD
 
 @UIApplicationMain
 class ngmAppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    private static let applicationID: String = "Nickstagram"
+    private static let clientKey: String = "29397f3759120ec0b1e329a61fdc027a"
+    private static let server: String = "https://aqueous-mountain-26341.herokuapp.com/parse"
+    
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         SVProgressHUD.setDefaultStyle(.dark)
         
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
-            configuration.applicationId = "Nickstagram"
-            configuration.clientKey = "29397f3759120ec0b1e329a61fdc027a"
-            configuration.server = "https://aqueous-mountain-26341.herokuapp.com/parse"
+            configuration.applicationId = ngmAppDelegate.applicationID
+            configuration.clientKey = ngmAppDelegate.clientKey
+            configuration.server = ngmAppDelegate.server
         }))
         
         if ngmUser.currentUser != nil {

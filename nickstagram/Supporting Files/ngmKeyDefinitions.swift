@@ -11,6 +11,7 @@ import SVProgressHUD
 
 let ngmDefaultAppColor: UIColor = .black
 let postParseClassNameIdentifier: String = "Post"
+let ngmDefaultFontIdentifier: String = "TrebuchetMS"
 
 enum ngmTabBarViewControllers: Int {
     case homeViewController

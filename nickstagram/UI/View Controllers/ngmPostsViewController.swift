@@ -27,6 +27,7 @@ class ngmPostsViewController: UIViewController {
         self.postsTableView.rowHeight = UITableViewAutomaticDimension
         self.postsTableView.estimatedRowHeight = 435
         
+        // Load posts.
         self.loadPosts()
     }
     
@@ -64,6 +65,12 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
         return 30
     }
     
+    private func generateHeaderLabel() -> UILabel {
+        let label: ngmPhotoSectionHeaderLabel = ngmPhotoSectionHeaderLabel()
+        return label
+    }
+    
+    // TODO: - Fix this. This code is very ugly. Try to move to a XIB file?
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerViewHeight: CGFloat = 26
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
@@ -75,20 +82,14 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         headerView.addSubview(blurEffectView)
         
-        let usernameLabel: UILabel = UILabel() //UILabel(frame: CGRect(x: 8, y: 6, width: UIScreen.main.bounds.width - 8, height: 14))
+        let usernameLabel: UILabel = self.generateHeaderLabel()
         usernameLabel.text = self.posts![section].postAuthor!.username
-        usernameLabel.textColor = UIColor.white
-        usernameLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
-        usernameLabel.sizeToFit()
         let usernameFrame: CGRect = CGRect(x: 8, y: 6, width: usernameLabel.frame.size.width, height: 14)
         usernameLabel.frame = usernameFrame
         headerView.addSubview(usernameLabel)
         
-        let createdAtLabel: UILabel = UILabel()
+        let createdAtLabel: UILabel = self.generateHeaderLabel()
         createdAtLabel.text = self.posts![section].formattedCreatedAt
-        createdAtLabel.textColor = UIColor.white
-        createdAtLabel.font = UIFont(name: "TrebuchetMS", size: 15.0)
-        createdAtLabel.sizeToFit()
         let createdAtFrame: CGRect = CGRect(x: (UIScreen.main.bounds.width - 8) - createdAtLabel.frame.size.width, y: 6, width: createdAtLabel.frame.size.width, height: 14)
         createdAtLabel.frame = createdAtFrame
         headerView.addSubview(createdAtLabel)
