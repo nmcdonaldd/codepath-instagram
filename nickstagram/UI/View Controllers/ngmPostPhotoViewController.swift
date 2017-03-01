@@ -84,7 +84,8 @@ class ngmPostPhotoViewController: UIViewController {
     private func resetViewsToDefault() {
         self.postImageView.isHidden = true
         self.noImageYetContentView.isHidden = false
-        self.photoCaptionTextView.text = ""
+        self.photoCaptionTextView.text = "Caption..."
+        self.photoCaptionTextView.textColor = UIColor.lightGray
         self.postImageView.image = nil
         self.postPhotobarButtonItem.isEnabled = false
     }
