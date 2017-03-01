@@ -42,7 +42,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Apart from challenges, I just wanted to note that I prefix objects and files with "ngm" (nickstagram) as a psuedo codename for the project.
 
 ## License
 
