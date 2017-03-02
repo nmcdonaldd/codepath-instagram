@@ -22,7 +22,7 @@ class ngmPostTableViewCell: UITableViewCell {
             self.postImageView.load { (image: UIImage?, error: Error?) in
                 guard error == nil else {
                     // Error is not nil. Show an error or something.
-                    print(error?.localizedDescription)
+                    print("Error loading image: \(error?.localizedDescription)")
                     return
                 }
                 self.loadingImageActivityIndicatorView.stopAnimating()
