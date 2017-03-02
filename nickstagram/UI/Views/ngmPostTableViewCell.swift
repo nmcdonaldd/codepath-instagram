@@ -14,9 +14,21 @@ class ngmPostTableViewCell: UITableViewCell {
     
     var postData: ngmPost? {
         didSet {
+            self.loadingImageActivityIndicatorView.isHidden = false
+            self.loadingImageActivityIndicatorView.startAnimating()
+            
             // Load the imageView with the PFFile data.
             self.postImageView.file = self.postData?.imageData
-            self.postImageView.loadInBackground()
+//            self.postImageView.loadInBackground()
+            self.postImageView.load { (image: UIImage?, error: Error?) in
+                guard error == nil else {
+                    // Error is not nil. Show an error or something.
+                    print(error?.localizedDescription)
+                    return
+                }
+                self.loadingImageActivityIndicatorView.stopAnimating()
+                self.loadingImageActivityIndicatorView.isHidden = true
+            }
             
             // Set the caption.
             self.postCaptionLabel.text = self.postData?.caption
@@ -25,6 +37,7 @@ class ngmPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var postCaptionLabel: UILabel!
+    @IBOutlet weak var loadingImageActivityIndicatorView: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +48,10 @@ class ngmPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        self.imageView?.image = UIImage()
     }
 
 }

@@ -462,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
 				INFOPLIST_FILE = nickstagram/Info.plist;
@@ -476,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
 				INFOPLIST_FILE = nickstagram/Info.plist;

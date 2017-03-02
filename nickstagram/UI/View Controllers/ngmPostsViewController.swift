@@ -62,7 +62,7 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 40
     }
     
     private func generateHeaderLabel() -> UILabel {
@@ -72,7 +72,7 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
     
     // TODO: - Fix this. This code is very ugly. Try to move to a XIB file?
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerViewHeight: CGFloat = 26
+        let headerViewHeight: CGFloat = 40
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
         headerView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
         
@@ -84,13 +84,13 @@ extension ngmPostsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let usernameLabel: UILabel = self.generateHeaderLabel()
         usernameLabel.text = self.posts![section].postAuthor!.username
-        let usernameFrame: CGRect = CGRect(x: 8, y: 6, width: usernameLabel.frame.size.width, height: 14)
+        let usernameFrame: CGRect = CGRect(x: 8, y: 8, width: usernameLabel.frame.size.width, height: 18)
         usernameLabel.frame = usernameFrame
         headerView.addSubview(usernameLabel)
         
         let createdAtLabel: UILabel = self.generateHeaderLabel()
         createdAtLabel.text = self.posts![section].formattedCreatedAt
-        let createdAtFrame: CGRect = CGRect(x: (UIScreen.main.bounds.width - 8) - createdAtLabel.frame.size.width, y: 6, width: createdAtLabel.frame.size.width, height: 14)
+        let createdAtFrame: CGRect = CGRect(x: (UIScreen.main.bounds.width - 8) - createdAtLabel.frame.size.width, y: 8, width: createdAtLabel.frame.size.width, height: 18)
         createdAtLabel.frame = createdAtFrame
         headerView.addSubview(createdAtLabel)
         

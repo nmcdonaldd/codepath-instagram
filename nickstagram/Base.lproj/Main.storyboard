@@ -341,18 +341,24 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="mmz-jz-ahm">
+                                                    <rect key="frame" x="177" y="177.5" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="MDB-7A-QRA" secondAttribute="trailing" constant="8" id="DqT-BE-UKq"/>
                                                 <constraint firstItem="9Ot-Od-XH5" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" id="NR1-Dh-ih0"/>
+                                                <constraint firstItem="mmz-jz-ahm" firstAttribute="centerY" secondItem="9Ot-Od-XH5" secondAttribute="centerY" id="QWb-mt-C1G"/>
                                                 <constraint firstItem="MDB-7A-QRA" firstAttribute="top" secondItem="9Ot-Od-XH5" secondAttribute="bottom" constant="8" id="RxU-Pv-UZM"/>
+                                                <constraint firstItem="mmz-jz-ahm" firstAttribute="centerX" secondItem="9Ot-Od-XH5" secondAttribute="centerX" id="hBi-x6-LDd"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MDB-7A-QRA" secondAttribute="bottom" constant="8" id="kSc-Zt-WPZ"/>
                                                 <constraint firstItem="MDB-7A-QRA" firstAttribute="leading" secondItem="SN9-ob-P3o" secondAttribute="leading" constant="8" id="peD-ty-cJu"/>
                                                 <constraint firstItem="9Ot-Od-XH5" firstAttribute="top" secondItem="SN9-ob-P3o" secondAttribute="top" id="pqP-Az-ax1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="loadingImageActivityIndicatorView" destination="mmz-jz-ahm" id="S7b-HC-sx5"/>
                                             <outlet property="postCaptionLabel" destination="MDB-7A-QRA" id="CIa-2e-pPO"/>
                                             <outlet property="postImageView" destination="9Ot-Od-XH5" id="3nU-1z-Jg5"/>
                                         </connections>
