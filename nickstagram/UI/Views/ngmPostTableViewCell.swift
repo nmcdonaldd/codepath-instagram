@@ -19,7 +19,6 @@ class ngmPostTableViewCell: UITableViewCell {
             
             // Load the imageView with the PFFile data.
             self.postImageView.file = self.postData?.imageData
-//            self.postImageView.loadInBackground()
             self.postImageView.load { (image: UIImage?, error: Error?) in
                 guard error == nil else {
                     // Error is not nil. Show an error or something.
@@ -53,5 +52,4 @@ class ngmPostTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         self.imageView?.image = UIImage()
     }
-
 }
