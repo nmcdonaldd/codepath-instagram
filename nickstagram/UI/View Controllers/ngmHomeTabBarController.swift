@@ -9,6 +9,8 @@
 import UIKit
 
 class ngmHomeTabBarController: UITabBarController {
+    
+    private var didInitiallyPresentAddProfileViewController: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,21 +20,21 @@ class ngmHomeTabBarController: UITabBarController {
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .lightGray
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (ngmUser.currentUser?.userProfileImage == nil && didInitiallyPresentAddProfileViewController == false) {
+            // Want to show the screen to allow the user to add a profile image.
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let addProfileImageNavigationController: ngmBaseNavigationController = storyboard.instantiateViewController(withIdentifier: "addProfileImageNavigationController") as! ngmBaseNavigationController
+            self.modalPresentationStyle = .popover
+            self.present(addProfileImageNavigationController, animated: true, completion: {
+                self.didInitiallyPresentAddProfileViewController = true
+            })
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

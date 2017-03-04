@@ -135,6 +135,7 @@ class ngmPostPhotoViewController: UIViewController {
     }
 }
 
+// Image picker.
 extension ngmPostPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -152,7 +153,6 @@ extension ngmPostPhotoViewController: UIImagePickerControllerDelegate, UINavigat
                 self.postPhotobarButtonItem.isEnabled = true
             }
         }
-        
         dismiss(animated: true, completion: nil)
     }
     

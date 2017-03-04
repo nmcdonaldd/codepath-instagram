@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D3CDE6A21A6CEB46ADE441D4 /* Pods_nickstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352F5ED240FB1FFF41DB9D96 /* Pods_nickstagram.framework */; };
 		D50599E81E6177EF0032A17E /* ngmHomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50599E71E6177EF0032A17E /* ngmHomeTabBarController.swift */; };
+		D513D7861E6A5F53004741E9 /* ngmUserProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D513D7851E6A5F53004741E9 /* ngmUserProfileImageView.swift */; };
+		D513D7881E6A6561004741E9 /* ngmAddProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D513D7871E6A6561004741E9 /* ngmAddProfileImageViewController.swift */; };
 		D532CA6D1E5D234E008B4176 /* ngmAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6C1E5D234E008B4176 /* ngmAppDelegate.swift */; };
 		D532CA6F1E5D234E008B4176 /* ngmLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532CA6E1E5D234E008B4176 /* ngmLoginViewController.swift */; };
 		D532CA721E5D234E008B4176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D532CA701E5D234E008B4176 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		7AA082CBFB9158AD54A23C0C /* Pods-nickstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.release.xcconfig"; sourceTree = "<group>"; };
 		925826B45CFE9F922583250C /* Pods-nickstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nickstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nickstagram/Pods-nickstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		D50599E71E6177EF0032A17E /* ngmHomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmHomeTabBarController.swift; path = "UI/View Controllers/ngmHomeTabBarController.swift"; sourceTree = "<group>"; };
+		D513D7851E6A5F53004741E9 /* ngmUserProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmUserProfileImageView.swift; path = UI/Views/ngmUserProfileImageView.swift; sourceTree = "<group>"; };
+		D513D7871E6A6561004741E9 /* ngmAddProfileImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ngmAddProfileImageViewController.swift; path = "UI/View Controllers/ngmAddProfileImageViewController.swift"; sourceTree = "<group>"; };
 		D532CA691E5D234D008B4176 /* nickstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nickstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D532CA6C1E5D234E008B4176 /* ngmAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ngmAppDelegate.swift; sourceTree = "<group>"; };
 		D532CA6E1E5D234E008B4176 /* ngmLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ngmLoginViewController.swift; path = "UI/View Controllers/ngmLoginViewController.swift"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				D571CBF41E62C21400393690 /* ngmPostsViewController.swift */,
 				D5B2419C1E6393FB00DC97E1 /* ngmPostPhotoViewController.swift */,
 				D580AED51E63FC4C007AF41E /* ngmProfileViewController.swift */,
+				D513D7871E6A6561004741E9 /* ngmAddProfileImageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				D571CBF61E63813C00393690 /* ngmPostTableViewCell.swift */,
 				D5B2419E1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift */,
 				D5D86DF51E660131002FF0E1 /* ngmPhotoSectionHeaderLabel.swift */,
+				D513D7851E6A5F53004741E9 /* ngmUserProfileImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -328,7 +334,9 @@
 				D50599E81E6177EF0032A17E /* ngmHomeTabBarController.swift in Sources */,
 				D55D00C91E60E04800920741 /* ngmLoginButton.swift in Sources */,
 				D55D00CD1E61013600920741 /* ngmUser.swift in Sources */,
+				D513D7881E6A6561004741E9 /* ngmAddProfileImageViewController.swift in Sources */,
 				D5D86DF61E660131002FF0E1 /* ngmPhotoSectionHeaderLabel.swift in Sources */,
+				D513D7861E6A5F53004741E9 /* ngmUserProfileImageView.swift in Sources */,
 				D571CBF01E62ACFC00393690 /* ngmBaseNavigationController.swift in Sources */,
 				D55D00CF1E6106D700920741 /* ngmLoginTextField.swift in Sources */,
 				D5B2419F1E639DC300DC97E1 /* ngmPhotoCaptionTextView.swift in Sources */,

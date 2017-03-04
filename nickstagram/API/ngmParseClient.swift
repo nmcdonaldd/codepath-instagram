@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 enum ParseClientError: Error {
-    case userSignUpLoginError(String)
+    case parseUserSaveError(String)
     case postFailedToPost(String)
 }
 
@@ -26,7 +26,7 @@ class ngmParseClient: NSObject {
     // Sign up the user with Parse.
     func signUpParseUser(_ user: ngmUser, success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
         guard let parseUser: PFUser = user.parseUser else {
-            failure(ParseClientError.userSignUpLoginError("Error, no PFUser in ngmUser"))
+            failure(ParseClientError.parseUserSaveError("Error, no PFUser in ngmUser"))
             return
         }
         parseUser.signUpInBackground { (didComplete: Bool, error: Error?) in
@@ -56,6 +56,22 @@ class ngmParseClient: NSObject {
             return
         }
         postObject.saveInBackground { (didComplete: Bool, error: Error?) in
+            if (didComplete) {
+                success()
+            } else {
+                failure(error)
+            }
+        }
+    }
+    
+    // Update the user's profile.
+    func saveUserToParse(_ user: ngmUser, success: @escaping ()->(), failure: @escaping (Error?)->()) {
+        guard let parseUser: PFUser = user.parseUser else {
+            failure(ParseClientError.parseUserSaveError("Error, no PFUser in ngmUser."))
+            return
+        }
+        
+        parseUser.saveInBackground { (didComplete: Bool, error: Error?) in
             if (didComplete) {
                 success()
             } else {

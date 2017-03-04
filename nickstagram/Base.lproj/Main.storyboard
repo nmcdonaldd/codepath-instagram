@@ -195,7 +195,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.49510380993150682" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.33333333333333331" green="0.3333333432674408" blue="0.3333333432674408" alpha="0.49510380993150682" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="1n4-gp-TSV" firstAttribute="centerY" secondItem="1bx-r7-fjG" secondAttribute="centerY" id="dd7-fp-boS"/>
                                             <constraint firstItem="1n4-gp-TSV" firstAttribute="centerX" secondItem="1bx-r7-fjG" secondAttribute="centerX" id="gei-GW-ArE"/>
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G9-0S-6eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="1100.5997001499252"/>
+            <point key="canvasLocation" x="2879.1999999999998" y="1100.5997001499252"/>
         </scene>
         <!--Ngm Posts View Controller-->
         <scene sceneID="Epg-gu-XWM">
@@ -444,6 +444,67 @@
             </objects>
             <point key="canvasLocation" x="1812" y="103.89805097451276"/>
         </scene>
+        <!--Ngm Add Profile Image View Controller-->
+        <scene sceneID="IJn-qy-ZFG">
+            <objects>
+                <viewController id="lPc-K9-xEx" customClass="ngmAddProfileImageViewController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lsw-We-39u"/>
+                        <viewControllerLayoutGuide type="bottom" id="SIk-kg-nXb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6sP-tZ-wwY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic-profile" translatesAutoresizingMaskIntoConstraints="NO" id="2MS-cr-y6u" customClass="ngmUserProfileImageView" customModule="nickstagram" customModuleProvider="target">
+                                <rect key="frame" x="102.5" y="88" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Bt1-Ct-m7z"/>
+                                    <constraint firstAttribute="height" constant="170" id="ybR-q2-p0O"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-zT-oZI">
+                                <rect key="frame" x="77" y="306" width="221" height="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="Tap to change profile image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfileButtonTapped:" destination="lPc-K9-xEx" eventType="touchUpInside" id="Ogj-NC-o3k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bBf-zT-oZI" firstAttribute="top" secondItem="2MS-cr-y6u" secondAttribute="bottom" constant="48" id="1hH-fT-cpH"/>
+                            <constraint firstItem="2MS-cr-y6u" firstAttribute="top" secondItem="lsw-We-39u" secondAttribute="bottom" constant="24" id="8gE-65-TcP"/>
+                            <constraint firstItem="2MS-cr-y6u" firstAttribute="centerX" secondItem="6sP-tZ-wwY" secondAttribute="centerX" id="Lxc-fJ-NZ9"/>
+                            <constraint firstItem="2MS-cr-y6u" firstAttribute="centerX" secondItem="6sP-tZ-wwY" secondAttribute="centerX" id="NtH-Tf-oLO"/>
+                            <constraint firstItem="bBf-zT-oZI" firstAttribute="centerX" secondItem="6sP-tZ-wwY" secondAttribute="centerX" id="qFS-kU-Px1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="csj-B1-OF9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IKu-GO-a4a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelBarButtonTapped:" destination="lPc-K9-xEx" id="IFk-Ws-bBN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FOG-cT-Lu9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveBarButtonTapped:" destination="lPc-K9-xEx" id="4hF-Zi-wtc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profileImageView" destination="2MS-cr-y6u" id="7M8-4B-LKm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dru-rU-Ol7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360.80000000000001" y="901.79910044977521"/>
+        </scene>
         <!--Ngm Base Navigation Controller-->
         <scene sceneID="Owo-j2-hxm">
             <objects>
@@ -463,13 +524,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWV-gb-HFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="1100.5997001499252"/>
+            <point key="canvasLocation" x="1940" y="1100.5997001499252"/>
+        </scene>
+        <!--Ngm Base Navigation Controller-->
+        <scene sceneID="DAQ-BL-juO">
+            <objects>
+                <navigationController storyboardIdentifier="addProfileImageNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jGb-RB-ExO" customClass="ngmBaseNavigationController" customModule="nickstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VPT-XZ-EL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lPc-K9-xEx" kind="relationship" relationship="rootViewController" id="fMi-qi-K3I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOE-Ap-tTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594.39999999999998" y="901.79910044977521"/>
         </scene>
     </scenes>
     <resources>
         <image name="Plus Math Filled-50" width="25" height="25"/>
         <image name="User-48" width="24" height="24"/>
         <image name="camera1" width="350" height="350"/>
+        <image name="generic-profile" width="144" height="144"/>
         <image name="home" width="32" height="32"/>
         <image name="saber-4k" width="1920" height="1080"/>
     </resources>

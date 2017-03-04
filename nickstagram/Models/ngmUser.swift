@@ -11,8 +11,12 @@ import Parse
 
 class ngmUser: NSObject {
     
+    private static let userProfileImageDataIdentifier: String = "user_profile_image_data"
+    
     var username: String!
     var password: String!
+    
+    private(set) var userProfileImage: PFFile?
     private(set) var parseUser: PFUser?
     
     init(withUsername username: String, password: String) {
@@ -33,6 +37,23 @@ class ngmUser: NSObject {
         self.parseUser = user
     }
     
+    func updateUserProfileImage(image: UIImage, success: @escaping ()->(), failure: @escaping (Error?)->()) {
+        
+        guard let imageData: Data = UIImagePNGRepresentation(image) else {
+            return
+        }
+        
+        self.userProfileImage = PFFile(name: "image.png", data: imageData)
+        self.parseUser?[ngmUser.userProfileImageDataIdentifier] = self.userProfileImage
+        let parseClient: ngmParseClient = ngmParseClient.sharedInstance
+        parseClient.saveUserToParse(self, success: { 
+            success()
+        }) { (error: Error?) in
+            failure(error)
+        }
+        ngmUser.currentUser = self
+    }
+    
     func signUpWithParse(success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
         let parseClient: ngmParseClient = ngmParseClient.sharedInstance
         parseClient.signUpParseUser(self, success: {
@@ -45,8 +66,8 @@ class ngmUser: NSObject {
     func loginWithParse(success: @escaping ()->(), failure: @escaping ngmUserResultFailureBlock) {
         let parseClient: ngmParseClient = ngmParseClient.sharedInstance
         parseClient.loginParseUser(self, success: { (user: PFUser?) in
-            guard let _: PFUser = user else {
-                failure(ParseClientError.userSignUpLoginError("Error with user returned from network"))
+            guard user != nil else {
+                failure(ParseClientError.parseUserSaveError("Error with user returned from network"))
                 return
             }
             ngmUser.currentUser = ngmUser(withPFUser: PFUser.current())
@@ -74,7 +95,7 @@ class ngmUser: NSObject {
             return _currentUser
         }
         set {
-            // Nothing
+            _currentUser = newValue
         }
     }
 }
